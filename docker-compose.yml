@@ -1,0 +1,19 @@
+
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: python main.py 
+    volumes:
+      - ${LOCAL_FOLDER_PATH}:${LOCAL_FOLDER_PATH}:ro 
+    env_file:
+      - .env
+    ports: 
+      - 8080:8080
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
