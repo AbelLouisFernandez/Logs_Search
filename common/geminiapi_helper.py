@@ -6,7 +6,7 @@ from pathway.xpacks.llm.llms import LiteLLMChat, prompt_chat_single_qa
 
 load_dotenv()
 
-def openai_embedder(data):
+def gemini_embedder(data):
     embedder = LiteLLMEmbedder(
         model="voyage/voyage-01",
         api_key=os.environ["VOYAGE_API_KEY"],
@@ -14,7 +14,7 @@ def openai_embedder(data):
     return embedder(data)
 
 
-def openai_chat_completion(prompt):
+def gemini_chat_completion(prompt):
     model = LiteLLMChat(
         model="gemini/gemini-pro",
         api_key=os.environ["GEMINI_API_KEY"]

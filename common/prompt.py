@@ -1,6 +1,6 @@
 import pathway as pw
 from datetime import datetime
-from common.openaiapi_helper import openai_chat_completion
+from common.geminiapi_helper import gemini_chat_completion
 
 
 def prompt(index, embedded_query, user_query):
@@ -22,5 +22,5 @@ def prompt(index, embedded_query, user_query):
 
     return prompt.select(
         query_id=pw.this.id,
-        result=openai_chat_completion(pw.this.prompt),
+        result=gemini_chat_completion(pw.this.prompt),
     )
