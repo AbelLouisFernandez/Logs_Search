@@ -2,7 +2,12 @@
   Logs_Search
 </h1>
 
+## Key Features
 
+- **Up to date logs**: Logs are updated at the time time of user query to decrease the load on server with real-time updation.
+- **Future Integration**: Plans to incorporate the Wolfram API, enabling AURA to tackle complex mathematical problems.
+- **User-Friendly UI via Streamlit**: App comes equipped with an intuitive, Streamlit-powered interface.This sleek, user-friendly UI simplifies navigation.
+- **Code Reusability**: The code is reusable and all modules are independent of each other.
 
 
 
