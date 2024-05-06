@@ -1,15 +1,28 @@
 <h1 align="center">
   Logs_Search
+ <h3 align="center"><p> A tool to simplify logs inspection with LLM</p></h3>
 </h1>
 
+Logs_Search is a tool to help you identify the activites and errors of a server using logs of it with LLM.It will help you to look up errors faster and get solutions for it. 
 ## Key Features
 
-- **Up to date logs**: Logs are updated at the time time of user query to decrease the load on server with real-time updation.
-- **Future Integration**: Plans to incorporate the Wolfram API, enabling AURA to tackle complex mathematical problems.
+- **Up to date logs**: Logs are updated at the time of user query to decrease the load on server with real-time updation.
+- **Logs Rotation**: Old logs are deleted each time new one is created to prevent storage exhaustion.
 - **User-Friendly UI via Streamlit**: App comes equipped with an intuitive, Streamlit-powered interface.This sleek, user-friendly UI simplifies navigation.
 - **Code Reusability**: The code is reusable and all modules are independent of each other.
 
+## Build With
+- [Pathway LLM App](https://github.com/pathwaycom/llm-app)
+- [Voyage](https://www.voyageai.com/)
+- [Gemini](https://gemini.google.com/app)
+- [Streamlit](https://streamlit.io/)
+- [G Drive](https://www.google.com/intl/en_in/drive/)
+- [Fpdf](https://pypi.org/project/fpdf/)
+- [Docker](https://www.docker.com/)
 
+## Demo
+Check out this video to see how the tool works
+[![Video Demo](video_thumbnail.png)](https://www.youtube.com/watch?v=aJnsDiVkbY4)
 
 ## Methodolgy
 <p align="center">
@@ -18,7 +31,7 @@
 
 - **User Enters Query**:
     - User enters the query thorugh the streamit ui and when its submitted,it executes pdf.py.
-    - After pdf.py is execeuted query is sent to [pathway llm app](https://github.com/pathwaycom/llm-app). 
+    - After pdf.py is execeuted query is sent to pathway llm app. 
  
 - **Data Sources**:
     - Data is logged by server using its logging service or third party logging service.
@@ -30,7 +43,7 @@
     - The incoming data from these sources is processed and after processing, the data is split into smaller chunks. This is necessary because it’s often more efficient to work with smaller pieces of text when performing NLP tasks. The changes in data are automatically synced to the pipeline enabling real-time Retrieval Augmented Generation (RAG) using llm-app .
 
 - **Embedding**:
-    - These chunks are then embedded into a vector space using an Voyage embedding model. Embedding converts text data into numerical vectors that capture the semantic meaning of the text. 
+    - These chunks are then embedded into a vector space using a Voyage embedding model. Embedding converts text data into numerical vectors that capture the semantic meaning of the text. 
 
 - **KNN Vector Indexing**:
     - The numerical vectors are indexed using a KNN (k-nearest neighbors) algorithm. In used to quickly retrieve the most relevant text chunks in response to a query based on vector similarity. The llm app is reactive to changes to the corpus of documents: once new snippets are provided, it reindexes them and starts to use the new knowledge to answer subsequent queries. This technique is significantly faster and more efficient than conducting individual comparisons between the query and every document.
@@ -68,9 +81,16 @@ Ensure you have Docker and docker compose both latest version installed on your 
 
 
 ### 1. Environment Setup
-
-1. Create a `.env` file in the root directory of your project.
-2. Add the following lines to the `.env` file, replace with you API keys:
+- Clone the github repo using command
+  ``` shell
+  git clone https://github.com/AbelLouisFernandez/Logs_Search.git
+  ```
+  Change directory to Logs_Search
+   ``` shell
+   cd Logs_Search
+    ``` 
+- Create a `.env` file in the root directory of your project.
+- Add the following lines to the `.env` file, replace with you API keys:
 
    ```env
    GEMINI_API_KEY="Enter your gemini api key here"
