@@ -21,8 +21,8 @@ Logs_Search is a tool to help you identify the activites and errors of a server 
 - [Docker](https://www.docker.com/)
 
 ## Demo
-Check out this video to see how the tool works
-[![Video Demo](video_thumbnail.png)](https://www.youtube.com/watch?v=aJnsDiVkbY4)
+Click the Image to see how the tool works:
+[![Video Demo](./assets/video_thumbnail.png)](https://www.youtube.com/watch?v=aJnsDiVkbY4)
 
 ## Methodolgy
 <p align="center">
