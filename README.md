@@ -112,7 +112,9 @@ With the environment variables set up, you can now build the Docker and run the 
   docker-compose up
   ```
   This step compiles your application and its dependencies into a Docker image.
-  - If you change add some new dependecies in requirements.txt after you have build a docker container once you have use following command:
+  - If you change add some new dependecies in requirements.txt after you have build a docker container once you have rebuild container
+  - CAUTION:Rebuilding Container can take some time as it reinstalls every dependencies again.
+  - Use the following command to rebuild container:
   ```sh
   docker-compose build && docker-compose up
   ```
