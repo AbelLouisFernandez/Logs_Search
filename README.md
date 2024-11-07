@@ -96,7 +96,6 @@ Ensure you have Docker and docker compose both latest version installed on your 
    GEMINI_API_KEY="Enter your gemini api key here"
    VOYAGE_API_KEY="Enter your voyage api key here"
    EMBEDDING_DIMENSION=1024
-   LOCAL_FOLDER_PATH='/Desktop/dockercontainers'
    ```
 
 This file will be used by Docker to set the environment variables inside the container.
@@ -113,12 +112,11 @@ With the environment variables set up, you can now build the Docker and run the 
   docker-compose up
   ```
   This step compiles your application and its dependencies into a Docker image.
-  - If you change some code after you have build a docker container once you have use following command:
+  - If you change add some new dependecies in requirements.txt after you have build a docker container once you have use following command:
   ```sh
   docker-compose build && docker-compose up
   ```
-  This command will remake the container with the changes made or else the docker will use the conatiner made eariler
-  without any changes made
+  This command will remake the container with the new dependencies added to it.
    
 
 ### 3. Troubleshooting
